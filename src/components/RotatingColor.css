@@ -1,0 +1,15 @@
+@keyframes rotatingBackgroundColor {
+  0% {
+    background: #3322aa
+  }
+  100% {
+    background: #33aa22
+  }
+}
+
+.rotating-color {
+  animation-name: rotatingBackgroundColor;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
