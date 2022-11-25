@@ -47,11 +47,11 @@ export const HomePage: React.FunctionComponent = () => {
   const navigate = useNavigate();
   return (
   <>
-  <div className="rotating-color" style={{height: "65vh"}}>
-    <Typography variant="h1" style={{width: "100vw", textAlign: 'center', paddingTop: "10vw", color:"white", fontWeight: "bold"}}>
+  <div className="rotating-color" style={{paddingBottom: "5vw"}}>
+    <Typography variant="h1" style={{textAlign: 'center', color:"white", fontWeight: "bold", paddingTop: "5vw", fontSize: "clamp(2rem, 10vw, 5rem)"}}>
       Welcome to AcaBuzzer
     </Typography>
-    <Typography variant="h3" style={{width: "100vw", textAlign: 'center', paddingTop: "5vw", fontSize: "3.5vw", color:"white"}}>
+    <Typography variant="h3" style={{textAlign: 'center', paddingTop: "5vw", color:"white",  fontSize: "clamp(2rem, 5vw, 5rem)"}}>
       Your one stop destination to hosting an online buzzer game.
     </Typography>
   </div>

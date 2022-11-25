@@ -21,9 +21,11 @@ export const GameStartPage: React.FC = () => {
     return () => unsubscribe();
   }, []);
   const gridItems = data.map((d) =>
-          <Grid item key={d.name} xs={3}>
-            <Paper style={{textAlign: "center", height: "3vw", fontSize: "2vw", display: "flex", alignItems: "center", justifyContent: "center"}}>{d.name}</Paper>
-          </Grid>);
+            <Paper style={{textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"}}>
+              <Typography style={{fontSize: "30px"}}>
+              {d.name}
+              </Typography>
+            </Paper>);
   return (
     <>
       <div style={{backgroundColor: "#00AA88", height: "100vh", width: "100vw"}}>
@@ -39,9 +41,7 @@ export const GameStartPage: React.FC = () => {
         </Grid>
         </Grid>
         <Button style={{ float: "right", textAlign: "center", position: "fixed", bottom: "0px", right: "0px"}} size="large" variant="contained" onClick={() => navigate("/admin", {state:{id: state.id, name: state.name}})}>Start Game</Button>
-      <Grid container spacing={4}>
         {gridItems}
-      </Grid>
       </div>
     </>
   )

@@ -26,17 +26,18 @@ export const AdminPage:React.FunctionComponent = () => {
   }, []);
   const userData = data.filter((d) => d.buzzed);
   const names = userData.map((d) => d.name);
-  const listData = names.map((n) => <li key={n}>{n}</li>);
   const updateLock = async () => {
     await writeLock(state.id, !locked);
     setLocked(!locked);
   }
   const gridItems = names.map((n) =>
-          <Grid item key={n} xs={3}>
-            <Paper style={{height: "3vw", fontSize: "2vw", display: "flex", alignItems: "center", justifyContent: "center", margin: "2vw"}}>
-              {n}
+            <div style={{padding: "2vw", paddingBottom: "1vw", paddingTop: "1vw"}}>
+            <Paper style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+              <Typography style={{fontSize: "30px"}}>
+                {n}
+              </Typography>
             </Paper>
-          </Grid>);
+            </div>);
   return (
     <>
       <div style={{backgroundColor: "#00AA88", height: "100vh", width: "100vw"}}>
@@ -55,7 +56,6 @@ export const AdminPage:React.FunctionComponent = () => {
       <Button startIcon={locked ? <LockIcon/> : <LockOpenIcon/>} variant="contained" style={{backgroundColor: (locked ? "gray" : "blue")}} onClick={() => updateLock()}>{locked ? "locked" : "unlocked" }</Button>      
       {gridItems}
       </div>
-    {listData}
   </>
   );
 }
